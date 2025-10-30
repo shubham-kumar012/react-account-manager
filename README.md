@@ -1,7 +1,7 @@
 ## React Account Manager
 
 This is a simple React-based Account Management App that allows users to register, log in, update their profile, and log out. all using browser localStorage. Built with React, React Router, and Bootstrap.
-The project was built to demonstrate understanding of React fundamentals, state management, routing, and localStorage-based persistence.
+
 ---
 
 ## 🔴Live Demo
@@ -18,9 +18,9 @@ The project was built to demonstrate understanding of React fundamentals, state 
 - **Error Handling** – Alerts for invalid input, password mismatches, and login failures
 - **Reusable Components** – Modular structure with shared input, button, and alert components
 - **Routing** – Navigation handled with react-router-dom
----
 
 ---
+
 ## Technologies Used
 
 | Technology | Purpose |
@@ -45,8 +45,8 @@ The project was built to demonstrate understanding of React fundamentals, state 
 #### 4. Logout
  - Logout removes "loggedInUser" and redirects to login.
 
-
 ---
+
 ## Setup
 
 1. Clone the repository:
@@ -65,11 +65,8 @@ The project was built to demonstrate understanding of React fundamentals, state 
 npm run dev
 ```
 - The app will run locally at - http://localhost:5173 (if using Vite)
---- 
-
 
 ---
-
 
 
 ## Author🙋‍♂️
