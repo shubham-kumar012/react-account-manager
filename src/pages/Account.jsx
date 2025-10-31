@@ -74,7 +74,7 @@ const Account = () => {
     }
 
     return (
-        <div className="container-sm d-flex flex-column h-full w-full">
+        <div className="container-sm d-flex h-full w-full">
             {/* <---- Update Success Alert ----> */}
             {showAlert && (
                 <div className={`alert alert-success text-center py-2`} role="alert">

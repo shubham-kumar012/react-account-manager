@@ -49,7 +49,7 @@ const Register = () => {
 
 
     return (
-        <div className="container-sm d-flex flex-column h-full w-full">
+        <div className="container-sm d-flex flex-column h-full w-full px-0">
             {/* <---- Registration success alert ----> */}
             {showAlert && (
                 <div className={`alert alert-success text-center py-2`} role="alert">
