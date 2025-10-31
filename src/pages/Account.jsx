@@ -12,13 +12,13 @@ const Account = () => {
     const [showAlert, setShowAlert] = useState(false);
     const navigate = useNavigate();
 
-    // load the logged-in user's data from localStorage 
+    // load the logged-in user's data in form from the localStorage 
     useEffect(() => {
         const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
         // if user access the page directly so redirect to the login page
         if (!loggedInUser) {
-            navigate('/');
+            navigate('/login');
             return;
         }
 
@@ -56,9 +56,10 @@ const Account = () => {
         // save to localStorage
         localStorage.setItem('users', JSON.stringify(updatedUsers));
 
-        // update current loggenIn user
+        // update current loggenIn user(when user change the email)
         localStorage.setItem('loggedInUser', JSON.stringify({ firstName, lastName, email, password }));
 
+        // shows the success alert
         setShowAlert(true);
         setTimeout(() => {
             setShowAlert(false);
@@ -66,30 +67,32 @@ const Account = () => {
 
     }
 
-
+    // Logout handeling
     const handleLogout = () => {
         localStorage.removeItem('loggedInUser');
-        navigate('/');
+        navigate('/login');
     }
 
     return (
         <div className="container-sm d-flex flex-column h-full w-full">
+            {/* <---- Update Success Alert ----> */}
             {showAlert && (
                 <div className={`alert alert-success text-center py-2`} role="alert">
                     Update Success
                 </div>
             )}
 
+            {/* <---- Form Header ----> */}
             <div className='d-flex flex-column justify-content-center align-items-center  mb-5'>
                 <h1>Welcome back</h1>
                 <p style={{ color: '#595C5F' }}>You can edit your account details here!</p>
             </div>
 
+            {/* <---- Form Inputs ----> */}
             <div className='d-flex gap-3'>
                 <FormInput type='text' placeholder='First Name' value={firstName} onChange={event => setFirstName(event.target.value)} />
                 <FormInput type='text' placeholder='Last Name' value={lastName} onChange={event => setLastName(event.target.value)} />
             </div>
-
             <div className='container p-0'>
                 <FormInput type='email' placeholder='Email Address' value={email} onChange={event => setEmail(event.target.value)} />
             </div>
@@ -100,6 +103,7 @@ const Account = () => {
                 <FormInput type='password' placeholder='Confirm Password' value={confirmPassword} onChange={event => setConfirmPassword(event.target.value)} />
             </div>
 
+            {/* <---- Form Buttons ----> */}
             <div className='d-flex align-items-center justify-content-around  gap-0 text-center mt-4 mx-0'>
                 <Button type='danger' text='Logout' onClick={handleLogout}/>
                 <Button type='success' text='Update' onClick={handleUpdate}/>
