@@ -5,7 +5,7 @@ This is a simple React-based Account Management App that allows users to registe
 ---
 
 ## 🔴Live Demo
-🔗 [View Live Project](https://flashtap-c7rm5ln1m-shubhams-projects-84579036.vercel.app/)
+🔗 [View Live Project](https://react-account-manager.netlify.app/)
 
 ---
 
